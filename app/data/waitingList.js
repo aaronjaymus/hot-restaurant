@@ -6,6 +6,7 @@
 // ===============================================================================
 
 var waitingArray = [
+	4, 5, 6
 	// objects representing customers on the waiting list go here
 	// you may want to start with some hard-coded for testing
 ];

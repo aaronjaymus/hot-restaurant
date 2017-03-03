@@ -7,6 +7,7 @@ var tables = require("../data/tableData.js");
 // ROUTING
 // ===============================================================================
 
+
 module.exports = function(app) {
 
 	app.post("/api/reserve", function(req, res){
@@ -15,16 +16,18 @@ module.exports = function(app) {
 	
 		console.log(newCustomer);
 
-		if(tables.tableArray.length<5){
-			tables.tableArray.push(newCustomer);
+		if(tables.length<5){
+			tables.push(newCustomer);
+			res.json(true);
 		}else{
-			waiting.waitingArray.push(newCustomer);
+			waiting.push(newCustomer);
+			res.json(false);
 		}
 	});
 
 	app.get("/api/tables", function(req, res){
 		var allTables = [];
-		allTables.push(tables.tableArray, waiting.waitingArray);
+		allTables.push(tables, waiting);
 		res.json(allTables);
 	});
 };

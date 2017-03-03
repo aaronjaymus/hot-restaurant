@@ -6,6 +6,7 @@
 // ===============================================================================
 
 var tableArray = [
+	
 	// objects representing customers with reservations go here
 	// you may want to start with some hard-coded for testing
 ];
